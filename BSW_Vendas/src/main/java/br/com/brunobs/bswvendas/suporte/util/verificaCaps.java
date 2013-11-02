@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.brunobs.bswvendas.suporte.util;
 
 import java.awt.Toolkit;
@@ -9,7 +5,11 @@ import java.awt.event.KeyEvent;
 
 /**
  *
- * @author Bruno
+ * @author Bruno Barbosa da Silva
+ * @E-mail bbsgt@hotmail.com
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
+ *
  */
 public class verificaCaps {
 

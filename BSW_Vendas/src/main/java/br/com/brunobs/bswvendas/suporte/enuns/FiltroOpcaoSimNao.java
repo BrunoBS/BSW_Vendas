@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.brunobs.bswvendas.suporte.enuns;
 
 import java.util.HashMap;
@@ -13,7 +9,8 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author Bruno Barbosa da Silva
  * @E-mail bbsgt@hotmail.com
- * @Site: www.brunobs.com.br
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
  *
  */
 public enum FiltroOpcaoSimNao {

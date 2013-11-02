@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.brunobs.bswvendas.suporte.util;
 
 import java.text.DateFormat;
@@ -11,8 +7,13 @@ import java.util.Date;
 
 /**
  *
- * @author Bruno
+ * @author Bruno Barbosa da Silva
+ * @E-mail bbsgt@hotmail.com
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
+ *
  */
+
 public class DateUtil {
 
     public static Date diferencaDatasPorHora(Date primeira, Date segunda) {

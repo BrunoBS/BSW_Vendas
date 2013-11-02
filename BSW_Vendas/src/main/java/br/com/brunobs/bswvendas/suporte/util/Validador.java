@@ -11,7 +11,11 @@ import java.lang.annotation.Target;
 
 /**
  *
- * @author Bruno
+ * @author Bruno Barbosa da Silva
+ * @E-mail bbsgt@hotmail.com
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
+ *
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

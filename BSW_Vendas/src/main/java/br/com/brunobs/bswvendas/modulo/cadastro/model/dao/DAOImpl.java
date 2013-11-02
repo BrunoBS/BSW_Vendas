@@ -7,8 +7,8 @@ import java.lang.reflect.ParameterizedType;
  *
  * @author Bruno Barbosa da Silva
  * @E-mail bbsgt@hotmail.com
- * @Site: www.brunobs.com.br
- * @GitHub: Brunobs
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
  *
  */
 public class DAOImpl<T extends Entidade> extends DAO<T> {

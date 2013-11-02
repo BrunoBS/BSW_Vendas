@@ -7,7 +7,8 @@ import java.util.Map;
  *
  * @author Bruno Barbosa da Silva
  * @E-mail bbsgt@hotmail.com
- * @Site: www.brunobs.com.br
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
  *
  */
 public enum SituacaoCadastro {

@@ -9,8 +9,8 @@ import org.hibernate.Session;
  *
  * @author Bruno Barbosa da Silva
  * @E-mail bbsgt@hotmail.com
- * @Site: www.brunobs.com.br
- * @GitHub: Brunobs
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
  *
  */
 public class PhaseListenerBS implements PhaseListener {

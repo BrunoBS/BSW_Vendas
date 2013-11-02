@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.brunobs.bswvendas.modulo.cadastro.util;
 
 import javax.faces.context.FacesContext;
@@ -11,8 +7,8 @@ import org.hibernate.Session;
  *
  * @author Bruno Barbosa da Silva
  * @E-mail bbsgt@hotmail.com
- * @Site: www.brunobs.com.br
- * @GitHub: Brunobs
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
  *
  */
 public class FacesContextUtil {

@@ -5,6 +5,14 @@ import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ *
+ * @author Bruno Barbosa da Silva
+ * @E-mail bbsgt@hotmail.com
+ * @Site www.brunobs.com.br
+ * @GitHub BrunoBS
+ *
+ */
 public class ValidadorRegra {
 
     private Validador validacao;
