@@ -39,8 +39,10 @@ Tecnologias Utilizadas no Projeto
   - Estoques
   - Empréstimos /Transferência
   - Baixas no Estoque
+
   
-  3) Financeiro / Contabilidade
+3) Financeiro / Contabilidade
+
  
  - Controle de Caixas
  - Contas a Pagar
