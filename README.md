@@ -12,7 +12,9 @@ Tecnologias Utilizadas no Projeto
  
 ==============  MÓDULOS  ============== 
  
- 1) Cadastros em Geral:
+
+1) Cadastros em Geral:
+ 
  
  - Categorias
  - Clientes
@@ -30,7 +32,8 @@ Tecnologias Utilizadas no Projeto
  - Unidade de Medida
 
  
-  2) Estoques
+2) Estoques
+ 
   
   - Definir Preços
   - Estoques
@@ -49,8 +52,10 @@ Tecnologias Utilizadas no Projeto
  - Lançamentos 
  - Recibos
  - Transferência entre caixas
+
+
+4) Vendas
  
-  4) Vendas
  
  - Pedidos
  - Adicionar/Remover Produtos
@@ -60,13 +65,16 @@ Tecnologias Utilizadas no Projeto
  - Orçamentos
  
  
-  5) Utilitários
+5) Utilitários
  
+
  - Mapas
  - Agenda
  - Calculadora
  
-  6) Sistema 
+
+6) Sistema 
+
 
  - Controle de Acesso
  - Usuários do Sistema
