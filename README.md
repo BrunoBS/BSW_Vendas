@@ -1,4 +1,4 @@
-==============  BSW-Vendas   ============== 
+==============  BSW-Vendas  - Sistema de Gerenciameto de Vendas  ============== 
 
 Tecnologias Utilizadas no Projeto
 
