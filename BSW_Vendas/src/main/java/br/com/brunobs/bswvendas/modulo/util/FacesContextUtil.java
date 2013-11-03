@@ -1,4 +1,4 @@
-package br.com.brunobs.bswvendas.modulo.cadastro.util;
+package br.com.brunobs.bswvendas.modulo.util;
 
 import javax.faces.context.FacesContext;
 import org.hibernate.Session;
