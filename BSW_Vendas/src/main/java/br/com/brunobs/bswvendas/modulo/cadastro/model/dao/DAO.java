@@ -1,6 +1,7 @@
 package br.com.brunobs.bswvendas.modulo.cadastro.model.dao;
 
 import br.com.brunobs.bswvendas.modulo.cadastro.model.entities.Entidade;
+import br.com.brunobs.bswvendas.suporte.exception.ValidacaoException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public abstract class DAO<T extends Entidade> {
     protected Session session;
     private Transaction transacao;
 
-    public void salvar(T t) throws Exception {
+    public void salvar(T t) throws ValidacaoException {
         try {
             transacao = session.beginTransaction();
             session.clear();
@@ -35,11 +36,11 @@ public abstract class DAO<T extends Entidade> {
             transacao.commit();
         } catch (HibernateException e) {
             transacao.rollback();
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
     }
 
-    public void salvarLista(List<T> ts) throws Exception {
+    public void salvarLista(List<T> ts) throws ValidacaoException {
         try {
             transacao = session.beginTransaction();
             session.clear();
@@ -49,11 +50,11 @@ public abstract class DAO<T extends Entidade> {
             transacao.commit();
         } catch (HibernateException e) {
             transacao.rollback();
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
     }
 
-    public void salvarOuAtualizarLista(List<T> ts) throws Exception {
+    public void salvarOuAtualizarLista(List<T> ts) throws ValidacaoException {
         try {
             transacao = session.beginTransaction();
             session.clear();
@@ -63,11 +64,11 @@ public abstract class DAO<T extends Entidade> {
             transacao.commit();
         } catch (HibernateException e) {
             transacao.rollback();
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
     }
 
-    public void salvarOuAtualizar(T t) throws Exception {
+    public void salvarOuAtualizar(T t) throws ValidacaoException {
         try {
             transacao = session.beginTransaction();
             session.clear();
@@ -75,11 +76,11 @@ public abstract class DAO<T extends Entidade> {
             transacao.commit();
         } catch (HibernateException e) {
             transacao.rollback();
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
     }
 
-    public void alterar(T t) throws Exception {
+    public void alterar(T t) throws ValidacaoException {
         try {
             transacao = session.beginTransaction();
             session.clear();
@@ -87,11 +88,11 @@ public abstract class DAO<T extends Entidade> {
             transacao.commit();
         } catch (HibernateException e) {
             transacao.rollback();
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
     }
 
-    public void alterarLista(List<T> ts) throws Exception {
+    public void alterarLista(List<T> ts) throws ValidacaoException {
         try {
             transacao = session.beginTransaction();
             session.clear();
@@ -101,11 +102,11 @@ public abstract class DAO<T extends Entidade> {
             transacao.commit();
         } catch (HibernateException e) {
             transacao.rollback();
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
     }
 
-    public void deletar(T t) throws Exception, ConstraintViolationException {
+    public void deletar(T t) throws ValidacaoException, ConstraintViolationException {
         try {
             transacao = session.beginTransaction();
             session.clear();
@@ -117,11 +118,11 @@ public abstract class DAO<T extends Entidade> {
             throw new ConstraintViolationException(ex.getMessage(), ex.getSQLException(), ex.getConstraintName());
         } catch (HibernateException e) {
             transacao.rollback();
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
     }
 
-    public void deletarLista(List<T> ts) throws org.hibernate.exception.ConstraintViolationException, Exception {
+    public void deletarLista(List<T> ts) throws org.hibernate.exception.ConstraintViolationException, ValidacaoException {
         try {
             transacao = session.beginTransaction();
             session.clear();
@@ -135,42 +136,42 @@ public abstract class DAO<T extends Entidade> {
             throw new ConstraintViolationException(ex.getMessage(), ex.getSQLException(), ex.getConstraintName());
         } catch (HibernateException e) {
             transacao.rollback();
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
 
     }
 
-    public T atualizaObjeto(T t) throws Exception {
+    public T atualizaObjeto(T t) throws ValidacaoException {
         T bean = null;
         try {
             session.refresh(t);
         } catch (HibernateException e) {
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
         return bean;
     }
 
-    public T buscaPorID(Serializable codigo) throws Exception {
+    public T buscaPorID(Serializable codigo) throws ValidacaoException {
         T bean = null;
         try {
             bean = (T) session.get(classe, codigo);
         } catch (HibernateException e) {
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
         return bean;
     }
 
-    public T buscaPorObjeto(Serializable codigo) throws Exception {
+    public T buscaPorObjeto(Serializable codigo) throws ValidacaoException {
         T bean = null;
         try {
             bean = (T) session.get(classe, codigo);
         } catch (HibernateException e) {
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
         return bean;
     }
 
-    public List<T> pesquisarPorParamentro(String parametro, Object value, String ordem) throws Exception {
+    public List<T> pesquisarPorParamentro(String parametro, Object value, String ordem) throws ValidacaoException {
         List<T> lista = new ArrayList<T>();
         try {
             Criteria criteria = session.createCriteria(classe);
@@ -178,13 +179,13 @@ public abstract class DAO<T extends Entidade> {
             ordenaPesquisa(ordem, criteria);
             lista = criteria.list();
         } catch (HibernateException e) {
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
         return lista;
 
     }
 
-    public List<T> pesquisarPorParamentroComAlias(String alias, String parametro, Object value, String ordem) throws Exception {
+    public List<T> pesquisarPorParamentroComAlias(String alias, String parametro, Object value, String ordem) throws ValidacaoException {
         List<T> lista = new ArrayList<T>();
         try {
             String dado = "obj";
@@ -194,26 +195,26 @@ public abstract class DAO<T extends Entidade> {
             criteria.addOrder(Order.asc(dado + "." + parametro));
             lista = criteria.list();
         } catch (HibernateException e) {
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
         return lista;
 
     }
 
-    public List<T> pesquisarTodos(String ordem) throws Exception {
+    public List<T> pesquisarTodos(String ordem) throws ValidacaoException {
         List<T> lista = new ArrayList<T>();
         try {
             Criteria criteria = session.createCriteria(classe);
             ordenaPesquisa(ordem, criteria);
             lista = criteria.list();
         } catch (HibernateException e) {
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
         return lista;
 
     }
 
-    public List<T> pesquisarComCondicao(List<LogicalExpression> listExpress, String ordem) throws Exception {
+    public List<T> pesquisarComCondicao(List<LogicalExpression> listExpress, String ordem) throws ValidacaoException {
         List<T> lista = new ArrayList<T>();
         try {
             Criteria criteria = session.createCriteria(classe);
@@ -225,12 +226,12 @@ public abstract class DAO<T extends Entidade> {
             ordenaPesquisa(ordem, criteria);
             lista = criteria.list();
         } catch (HibernateException e) {
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
         return lista;
     }
 
-    public List<T> pesquisarComCondicaoComAlias(String alias, String propriedade, List<LogicalExpression> listExpress, String ordem) throws Exception {
+    public List<T> pesquisarComCondicaoComAlias(String alias, String propriedade, List<LogicalExpression> listExpress, String ordem) throws ValidacaoException {
         List<T> lista = new ArrayList<T>();
         try {
             Criteria criteria = session.createCriteria(classe);
@@ -243,7 +244,7 @@ public abstract class DAO<T extends Entidade> {
             ordenaPesquisa(ordem, criteria);
             lista = criteria.list();
         } catch (HibernateException e) {
-            throw new Exception(e.getMessage());
+            throw new ValidacaoException(e.getMessage());
         }
         return lista;
 

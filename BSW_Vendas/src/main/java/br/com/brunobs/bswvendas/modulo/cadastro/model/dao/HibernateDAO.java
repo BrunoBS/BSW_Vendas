@@ -1,6 +1,7 @@
 package br.com.brunobs.bswvendas.modulo.cadastro.model.dao;
 
 import br.com.brunobs.bswvendas.modulo.cadastro.model.entities.Entidade;
+import br.com.brunobs.bswvendas.modulo.util.FacesContextUtil;
 import java.lang.reflect.ParameterizedType;
 
 /**
@@ -11,10 +12,10 @@ import java.lang.reflect.ParameterizedType;
  * @GitHub BrunoBS
  *
  */
-public class DAOImpl<T extends Entidade> extends DAO<T> {
+public class HibernateDAO<T extends Entidade> extends DAO<T> {
 
-    public DAOImpl() {
+    public HibernateDAO() {
         this.classe = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-        session = null;// HibernateUtil.getSessionFactory().
+        this.session = FacesContextUtil.getRequestSession();
     }
 }

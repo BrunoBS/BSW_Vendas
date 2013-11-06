@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>BSW Vendas - Sistema de Gerenciameto de Vendas</title>
+        <f:facet name="add">
+            <h:outputStylesheet  library="css" name="bootstrap.min.css" />
+            <!--<h:outputScript  library="js" name="bootstrap.min.js" />-->  
+        </f:facet>
+
+
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="100" header="Sistema de Gerenciameto de Vendas">  
+
+            </p:layoutUnit>
+            <p:layoutUnit position="west" size="200" header="Menu"  collapsible="true">  
+                <h:form> 
+                    <p:panelMenu style="width:200px">
+                        <p:submenu label="Cadastro em Geral">
+                            <p:menuitem value="Conta de E-mail"   icon="ui-icon-signal" />
+                            <p:menuitem value="Categorias"   icon="ui-icon-signal" />
+                            <p:menuitem value="Clientes"   icon="ui-icon-signal" />
+                            <p:menuitem value="Conta de E-mail"   icon="ui-icon-signal" />
+                            <p:menuitem value="Descrição dos Preços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Empresa"   icon="ui-icon-signal" />
+                            <p:menuitem value="Endereços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Formas de Pagamento"   icon="ui-icon-signal" />
+                            <p:menuitem value="Fornecedor"   icon="ui-icon-signal" />
+                            <p:menuitem value="Funcionários"   icon="ui-icon-signal" />
+                            <p:menuitem value="Produtos / Serviços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Tipo de Pagamento"   icon="ui-icon-signal" />
+                            <p:menuitem value="Unidade de Medida"   icon="ui-icon-signal" />
+                        </p:submenu>
+
+                        <p:separator />
+                        <p:submenu label="Estoques">
+                            <p:menuitem value="Conta de E-mail"   icon="ui-icon-signal" />
+                            <p:menuitem value="Categorias"   icon="ui-icon-signal" />
+                            <p:menuitem value="Clientes"   icon="ui-icon-signal" />
+                            <p:menuitem value="Conta de E-mail"   icon="ui-icon-signal" />
+                        </p:submenu>
+                        <p:separator />
+                        <p:submenu label="Financeiro / Contabilidade">
+                            <p:menuitem value="Conta de E-mail"   icon="ui-icon-signal" />
+                            <p:menuitem value="Descrição dos Preços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Empresa"   icon="ui-icon-signal" />
+                            <p:menuitem value="Endereços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Formas de Pagamento"   icon="ui-icon-signal" />
+                            <p:menuitem value="Fornecedor"   icon="ui-icon-signal" />
+                            <p:menuitem value="Funcionários"   icon="ui-icon-signal" />
+                            <p:menuitem value="Produtos / Serviços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Tipo de Pagamento"   icon="ui-icon-signal" />
+                            <p:menuitem value="Unidade de Medida"   icon="ui-icon-signal" />
+                        </p:submenu>
+                        <p:separator />
+                        <p:submenu label="Vendas1">
+                            <p:menuitem value="Caixas"  icon="ui-icon-signal" />
+                            <p:menuitem value="Categorias"   icon="ui-icon-signal" />
+                            <p:menuitem value="Clientes"   icon="ui-icon-signal" />
+                            <p:menuitem value="Conta de E-mail"   icon="ui-icon-signal" />
+                            <p:menuitem value="Descrição dos Preços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Empresa"   icon="ui-icon-signal" />
+                        </p:submenu>
+                        <p:separator />
+                        <p:submenu label="Utilitários">
+                            <p:menuitem value="Produtos / Serviços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Tipo de Pagamento"   icon="ui-icon-signal" />
+                            <p:menuitem value="Unidade de Medida"   icon="ui-icon-signal" />
+                        </p:submenu>
+                        <p:separator />
+                        <p:submenu label="Sistema">
+                            <p:menuitem value="Produtos / Serviços"   icon="ui-icon-signal" />
+                            <p:menuitem value="Tipo de Pagamento"   icon="ui-icon-signal" />
+                            <p:menuitem value="Unidade de Medida"   icon="ui-icon-signal" />
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form> 
+            </p:layoutUnit>
+            <p:layoutUnit position="center">
+                <br/>
+                <div class="container">
+                    <p:panelGrid columns="1" styleClass="span10" >  
+                        <p:column>
+                            <div class="span2">
+                                <h:outputLabel for="Codigo" value="Codigo:  "/> 
+                                <p:inputText id="Codigo" value="" label="Codigo" styleClass="span2"   /> 
+                            </div>
+                            <div class="span7">
+                                <h:outputLabel for="Nome" value="Nome: " /> 
+                                <p:inputText id="Nome" value="" required="true" label="Nome" styleClass="span7"/>  
+                            </div>
+                        </p:column>
+
+                        <f:facet name="footer">  
+                            <p:commandButton type="button" value="Pesquisar" icon="ui-icon-search"/>  
+                        </f:facet>  
+                    </p:panelGrid>  
+                    <br/>
+                    <p:panelGrid columns="1"  styleClass="span10"  >  
+                        <h:form id="formTable"> 
+                            <br/>    <br/>
+                            <p:dataTable     >
+
+                                <p:column headerText="Ações" style="width:10%">
+                                    <p:commandButton id="searchButton" value="" icon="ui-icon-search"/>
+                                    <p:commandButton id="editButton" value="" icon="ui-icon-edit"/>
+                                    <p:commandButton id="deleteButton" value="" icon="ui-icon-delete"/>
+                                </p:column>
+
+                                <p:column headerText="Código" style="width:20%">
+                                </p:column>
+
+                                <p:column headerText="Caixa" style="width:70%" >
+                                </p:column>
+
+                            </p:dataTable>
+
+                        </h:form> 
+                    </p:panelGrid> 
+                </div>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+

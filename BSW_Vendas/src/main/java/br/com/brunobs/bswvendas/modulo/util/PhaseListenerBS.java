@@ -18,7 +18,7 @@ public class PhaseListenerBS implements PhaseListener {
     @Override
     public void afterPhase(PhaseEvent event) {
         if (event.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {
-            System.out.println("Antes da Fase - afterPhase" + getPhaseId().toString());
+            System.out.println("Antes da Fase: " + event.getPhaseId());
             Session session = HibernateUtil.getSessionFactory().openSession();
             FacesContextUtil.setRequestSession(session);
         }
@@ -27,7 +27,7 @@ public class PhaseListenerBS implements PhaseListener {
     @Override
     public void beforePhase(PhaseEvent event) {
         if (event.getPhaseId().equals(PhaseId.RENDER_RESPONSE)) {
-            System.out.println("Depois da Fase - beforePhase" + getPhaseId().toString());
+            System.out.println("Depois da Fase - beforePhase" + event.getPhaseId());
             Session session = FacesContextUtil.getRequestSession();
             try {
                 session.getTransaction().commit();

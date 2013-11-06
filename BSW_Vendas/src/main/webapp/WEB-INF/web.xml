@@ -18,17 +18,17 @@
     </session-config>
     
     <!-- Endereço dos arquivos de configuração do Spring -->
-    <context-param>
+    <!--    <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/spring-security.xml
         </param-value>
-    </context-param> 
+    </context-param> -->
 
     <!-- Configurações do tema do PrimeFaces -->
     <context-param>  
         <param-name>primefaces.THEME</param-name>  
-        <param-value>sam</param-value>  
+        <param-value>bluesky</param-value>  
     </context-param>    
           
     <servlet>
@@ -40,8 +40,8 @@
         <url-pattern>/primefaces_resource/*</url-pattern>
     </servlet-mapping>     
     
-    <!-- Filtros do Spring  -->
-    <listener>
+    <!--   Filtros do Spring   -->
+    <!--    <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <filter>
@@ -54,7 +54,7 @@
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
-    
+    -->
     <!-- Configurações do JavaServer Faces -->
     
     <context-param>

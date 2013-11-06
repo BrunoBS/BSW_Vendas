@@ -10,6 +10,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,7 +39,7 @@ public class Produto extends Entidade<Produto> implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "situacao")
-    @Type(type = "oficinas.regras.typeEnum.SituacaoCadastroEnum")
+    @Enumerated(EnumType.STRING)
     private SituacaoCadastro situacao;
     @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Precos> listaDePrecos = new ArrayList<Precos>();
@@ -64,7 +66,7 @@ public class Produto extends Entidade<Produto> implements Serializable {
     @Validador(Descricao = "Categoria")
     private Categoria categoria;
     @Column(name = "materiaPrima")
-    @Type(type = "oficinas.regras.typeEnum.FiltroOpcaoSimNaoEnum")
+    @Enumerated(EnumType.STRING)
     private FiltroOpcaoSimNao materiaPrima;
     @JoinColumn(name = "unidade", referencedColumnName = "codigo")
     @ManyToOne(optional = false)
