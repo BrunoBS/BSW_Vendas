@@ -18,8 +18,8 @@ import javax.faces.bean.SessionScoped;
  * @author Bruno Barbosa da Silva
  * @E-mail bbsgt@hotmail.com
  * @Site www.brunobs.com.br
- * @GitHub BrunoBS
- *
+ * @GitHub BrunoBS 
+ * 
  */
 @ManagedBean(name = "mbCategoria") 
 @SessionScoped
